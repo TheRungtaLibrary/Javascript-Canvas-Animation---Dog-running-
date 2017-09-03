@@ -13,13 +13,13 @@ The animation has two individual animations running in parallel to create a envi
 
 # The particles have random movement at 60fps
 
-/*
  * particle constructor defines the initial position(s) of each particle -
  * pointX - X-position of particle 
  * pointY - Y-position of particle
  * horDrctn - Horizontal direction of particle
  * drawParticle - Method to draw particle on canvas
- */
+
+```
 function particle() {
   this.pointX = randomIntFromInterval(canvas.width / 4, 3 * canvas.width / 4);
   this.pointY = randomIntFromInterval(canvas.height / 4, 200);
@@ -33,21 +33,23 @@ function particle() {
     context.closePath();
   }
 }
+```
 
-/*
  * particleArray is used to hold a 100 particles of random movement
  *  to create a floating cluster effect.
- */
+ 
+```
 var particleArray = [];
 
 for (var i = 0; i < 100; i++) {
   particleArray[i] = new particle();
 }
+```
 
-/*
  * randomPoint and randomIntFromInterval methods generate random X and Y points
  * for particles
- */
+ 
+```
 function randomPoint() {
   return arrPoints[Math.floor(Math.random() * arrPoints.length)];
 }
@@ -55,16 +57,18 @@ function randomPoint() {
 function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+```
 
 # The Dog is running at 10fps
-/*
+
  * The Dog object defines the following -
  * imgDog - Image object to draw the Dog sprite on Canvas
  * frameHeight - Height of a frame in sprite
  * xDog - X-Position of frame on Canvas
  * yDog - Y-Position of frame on Canvas
  * animateDog - Method to animate dog movement
- */
+ 
+```
 var Dog = {
 		imgDog: new Image(),
 		frameHeight: 0,
@@ -85,4 +89,5 @@ var Dog = {
 			  currFrameX = 82 * (this.frameIndex % frameCount);
 			  this.imgDog.src = 'pug-running_transparent.png';
 			  context.drawImage(this.imgDog, currFrameX, this.frameHeight, 82, 61, this.xDog, this.yDog, 82, 61);
-	
+	}
+	```
