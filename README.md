@@ -90,4 +90,4 @@ var Dog = {
 			  this.imgDog.src = 'pug-running_transparent.png';
 			  context.drawImage(this.imgDog, currFrameX, this.frameHeight, 82, 61, this.xDog, this.yDog, 82, 61);
 	}
-	```
+	
